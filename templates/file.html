@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block content %}
+<div class="card blue-grey darken-1">
+    <div class="card-content white-text">
+      <span class="card-title">
+        {% if content is not none %}
+          <i class="material-icons valign-middle">insert_drive_file</i> {{ title }}
+        {% else %}
+          <b>{{ title }}</b> :  ce fichier n'existe pas !
+        {% endif %}
+        <a class="right waves-effect waves-light btn" href="/viewer">
+          <i class="material-icons valign-middle">keyboard_backspace</i>
+        </a>
+      </span>
+    </div>
+</div>
+{% if content is not none %}
+<pre>
+<code>
+{{ content }}
+</code>
+</pre>
+{% endif %}
+{% endblock content %}

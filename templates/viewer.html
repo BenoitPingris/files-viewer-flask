@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %} Trucs de ouf {% endblock title %}
+
+{% block content %}
+  <h1>Files Manager : </h1>
+    <div class="nav-wrapper nav-path">
+      {% for n in range(path|length) %}
+        <a class="link-path" href="/viewer?path={{ path[:n+1] | join("/") }}">{{ path[n] }}</a>
+        {% if not loop.last %}
+              /
+        {% endif %}
+      {% endfor %}
+
+    </div>
+        <p>
+          <input type="checkbox" id="hide" />
+          <label for="hide">Toggle hidden files</label>
+        </p>
+    <ul class="list_dirs">
+      <div class="row">
+        {% for d in dirs %}
+        <div class="col s6">
+          <a href="/viewer?path={{ d }}">
+            <li class="a_dir">
+              <i class="material-icons valign-middle">folder</i> {{ d }}
+            </li>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </ul>
+
+  <ul class="list_files">
+    <div class="row">
+      {% for f in files %}
+        <div class="col s6">
+          <a href="/file?file={{ f }}">
+            <li class="a_file"><i class="material-icons valign-middle">insert_drive_file</i> {{ f }}</li>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </ul>
+{% endblock content %}

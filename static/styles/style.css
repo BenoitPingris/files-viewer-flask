@@ -1,0 +1,53 @@
+.nav-path {
+    background: #ee6e73;
+    padding:20px;
+    color: white;
+    font-size: 20px;
+}
+
+
+.italic {
+    font-style: italic;
+}
+
+.link-path {
+    font-style: italic;
+    color: white;
+    font-size:22px;
+}
+
+.link-path:hover {
+    text-decoration: underline;
+}
+
+.list_dirs {}
+
+.list_dirs .a_dir {
+    margin: 7px 0;
+    font-size: 18px;
+    background: #757575;
+    padding:20px;
+    border-left: 10px solid #616161;
+}
+
+.list_dirs a {
+    color: white;
+}
+
+.list_files {}
+
+.list_files .a_file {
+    margin: 7px 0;
+    font-size: 18px;
+    background: #1565C0;
+    padding: 20px;
+    border-left: 10px solid #0D47A1;
+}
+
+.list_files a {
+    color: white;
+}
+
+.valign-middle {
+    vertical-align: middle;
+}
